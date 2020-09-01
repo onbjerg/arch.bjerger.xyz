@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+# Build packages
+for d in $(ls -d */ | grep -v 'bin'); do (cd $d && makepkg -f -c); done
+pkgs=$(find -name '*.pkg.tar.xz')
+
+# Rebuild database
+repo-add bjerger.db.tar.xz $pkgs
+
+# Update upstream repository
+scp bjerger.db $pkgs root@arch.bjerger.xyz:/var/www/arch.bjerger.xyz
+
+# Clean git repository
+git clean -fd .
