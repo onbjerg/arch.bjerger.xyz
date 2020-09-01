@@ -4,7 +4,7 @@ My custom Arch packages for my repository hosted at [`arch.bjerger.xyz`](https:/
 
 ## Add to pacman
 
-```
+```ini
 # /etc/pacman.conf
 [bjerger]
 SigLevel = Optional TrustAll
