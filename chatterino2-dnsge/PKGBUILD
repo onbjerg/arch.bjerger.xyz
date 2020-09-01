@@ -1,5 +1,5 @@
 pkgname=chatterino2-dnsge
-pkgver=r2679.382dfbc2
+pkgver=r2830.b821375f
 pkgrel=1
 pkgdesc='Chatterino dnsge fork'
 arch=('any')
@@ -12,7 +12,6 @@ optdepends=('streamlink: For piping streams to video players'
             'gst-plugins-good: For audio output')
 provides=('chatterino')
 conflicts=('chatterino')
-install=$pkgname.install
 source=("git://github.com/dnsge/chatterino2")
 md5sums=('SKIP')
 
