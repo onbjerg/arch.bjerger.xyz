@@ -1,0 +1,30 @@
+pkgname=timer-for-harvest
+pkgver=v0.3.2
+pkgrel=1
+pkgdesc='GTK timer app for Harvest'
+arch=('any')
+url=https://github.com/frenkel/timer-for-harvest
+license=('MIT')
+depends=()
+makedepends=('git' 'cargo')
+optdepends=()
+provides=('timer-for-harvest')
+conflicts=('timer-for-harvest')
+source=("git://github.com/frenkel/timer-for-harvest")
+md5sums=('SKIP')
+
+pkgver() {
+    cd "$srcdir/timer-for-harvest"
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd "$srcdir/timer-for-harvest"
+    cargo build --release --locked --all-features
+}
+
+package() {
+    cd "$srcdir/timer-for-harvest"
+    install -Dm 755 target/release/${pkgname} -t "${pkgdir}/usr/bin"
+    install -Dm644 "assets/timer-for-harvest.desktop" "$pkgdir/usr/share/applications/timer-for-harvest.desktop"
+}
