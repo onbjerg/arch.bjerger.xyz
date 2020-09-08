@@ -1,1 +1,7 @@
 binwalk
+strace
+ltrace
+nmap
+john
+tor
+torbrowser-launcher
