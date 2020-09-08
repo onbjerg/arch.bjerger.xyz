@@ -1,5 +1,5 @@
 pkgname=chatterino2-dnsge
-pkgver=r2830.b821375f
+pkgver=r2845.8c69ab1e
 pkgrel=1
 pkgdesc='Chatterino dnsge fork'
 arch=('any')

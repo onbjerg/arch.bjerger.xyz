@@ -1,5 +1,5 @@
 pkgname=timer-for-harvest
-pkgver=v0.3.2
+pkgver=r190.3e16b2b
 pkgrel=1
 pkgdesc='GTK timer app for Harvest'
 arch=('any')
